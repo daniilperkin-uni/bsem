@@ -1,9 +1,10 @@
 # Dataset Evaluation
 
 
+## Group Discussion
+
 | Criterion                          | Guiding Question                                                                                                   | Source           | Dataset 1 | Dataset 2 | Dataset 3 |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------- | --------- | --------- | --------- |
-| Guideline Refinement               | Does the paper state that the annotation guidelines were refined during the process?                               | Klie 2024        |           |           |           |
 | Data Correctness & Quality Control | Are the data correct and fact-checked, and were attention checks used to ensure worker diligence?                  | group discussion |           |           |           |
 | Content Safety & Moderation        | Is the dataset screened and free of disturbing, toxic, or offensive content?                                       | group discussion |           |           |           |
 | Task Specificity                   | Are the data instances sufficiently specific, well-scoped, and tailored to the target task?                        | group discussion |           |           |           |
@@ -17,3 +18,32 @@
 | Annotator Background & Expertise   | What is the background of the data workers, and do they possess the necessary domain expertise?                    | group discussion |           |           |           |
 
 
+## Topic 1: Annotation Process (Klie 2024, §3.1)
+
+| Criterion                         | Guiding Question                                                                                                                   | Source          | Dataset 1 | Dataset 2 | Dataset 3 |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | --------------- | --------- | --------- | --------- |
+| Planning Phase Documented         | Does the paper document the goal, budget, target quality, and choice of data/annotators decided before annotation?                | Klie 2024, §3.1 |           |           |           |
+| Iterative, Batch-based Annotation | Was the data annotated in cycles (batches), with an evaluation after each batch?                                                   | Klie 2024, §3.1 |           |           |           |
+| Pilot Study                       | Was a pilot study with a small team and difficult/corner-case instances conducted before the main annotation?                     | Klie 2024, §3.1 |           |           |           |
+| Careful Data Selection            | Were the texts selected deliberately and checked for errors, low quality, non-representative content, or bias before annotation?  | Klie 2024, §3.1 |           |           |           |
+| Annotation Scheme Design          | Is the annotation scheme (structure, features, tagsets) documented, suited to the task, and revised when needed?                  | Klie 2024, §3.1 |           |           |           |
+| Guideline Design & Refinement     | Were the guidelines carefully designed (or adapted from existing ones), documented, and refined/clarified during the process?     | Klie 2024, §3.1 |           |           |           |
+| Quality Evaluation per Batch      | Is annotation quality measured after each batch (e.g., inter-annotator agreement, gold-standard comparison, expert inspection)?   | Klie 2024, §3.1 |           |           |           |
+| Validation Step                   | Is there a separate step after annotation and before adjudication that checks whether annotations are correct (direct/indirect)? | Klie 2024, §3.1 |           |           |           |
+| Rectifying Measures               | Were corrective measures taken when quality was insufficient (e.g., retraining annotators, clarifying guidelines, re-annotation)? | Klie 2024, §3.1 |           |           |           |
+| Adjudication / Gold Standard      | Were multiple annotations merged into one final label per instance only after sufficient quality was reached?                    | Klie 2024, §3.1 |           |           |           |
+| Process Stability                 | Was the annotation setup stable before scaling up (larger batches, less rigorous quality control)?                                | Klie 2024, §3.1 |           |           |           |
+
+
+## Topic 2: _TBD_
+
+| Criterion | Guiding Question | Source | Dataset 1 | Dataset 2 | Dataset 3 |
+| --------- | ---------------- | ------ | --------- | --------- | --------- |
+|           |                  |        |           |           |           |
+
+
+## Topic 3: _TBD_
+
+| Criterion | Guiding Question | Source | Dataset 1 | Dataset 2 | Dataset 3 |
+| --------- | ---------------- | ------ | --------- | --------- | --------- |
+|           |                  |        |           |           |           |
