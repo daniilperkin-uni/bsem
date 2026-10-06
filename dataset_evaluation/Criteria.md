@@ -35,11 +35,17 @@
 | Process Stability                 | Was the annotation setup stable before scaling up (larger batches, less rigorous quality control)?                                | Klie 2024, §3.1 |           |           |           |
 
 
-## Topic 2: _TBD_
+## Topic 2: Annotator Management (Klie 2024, §3.2)
 
 | Criterion | Guiding Question | Source | Dataset 1 | Dataset 2 | Dataset 3 |
-| --------- | ---------------- | ------ | --------- | --------- | --------- |
-|           |                  |        |           |           |           |
+| --- | --- | --- | --- | --- | --- |
+| Workforce Selection & Fit | Was the workforce type (crowdworkers, contractors, domain experts, volunteers) appropriately selected to match task difficulty, language, and domain requirements, and was this choice validated (e.g., via a pilot study)? | Klie 2024, §3.2 | | | |
+| Qualification Filtering | Were prerequisite qualification filters (e.g., acceptance rate, completed tasks, language proficiency) established without imposing excessively restrictive or ungrounded thresholds? | Klie 2024, §3.2 | | | |
+| Qualification Testing | Were annotators evaluated via a dedicated (paid) qualification test on representative or unseen instances to verify proficiency before admission to the main task? | Klie 2024, §3.2 | | | |
+| Annotator Training | Was comprehensive task training conducted for all annotator groups—including domain experts and crowdworkers alike—to ensure guideline comprehension and temporal stability? | Klie 2024, §3.2 | | | |
+| Annotator Debriefing & Feedback | Were annotators systematically debriefed during and after the project to gather feedback on guideline clarity, scheme edge cases, and tool usability? | Klie 2024, §3.2 | | | |
+| Monetary Incentives & Bonuses | Were bonus monetary incentives provided (e.g., for task retention or high performance on control instances) using transparent, pre-communicated rules that avoid gaming? | Klie 2024, §3.2 | | | |
+| Fair Pay & Ethical Treatment | Were annotators compensated with fair base pay and treated ethically (e.g., clear terms, respectful communication, and no unjustified wage withholding)? | Klie 2024, §3.2 | | | |
 
 
 ## Topic 3: _TBD_
