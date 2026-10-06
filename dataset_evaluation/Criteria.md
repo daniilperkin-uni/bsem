@@ -48,8 +48,15 @@
 | Fair Pay & Ethical Treatment | Were annotators compensated with fair base pay and treated ethically (e.g., clear terms, respectful communication, and no unjustified wage withholding)? | Klie 2024, §3.2 | | | |
 
 
-## Topic 3: _TBD_
+## Topic 3: Quality Improvement & Adjudication (Klie 2024, §3.4 & §3.5)
 
-| Criterion | Guiding Question | Source | Dataset 1 | Dataset 2 | Dataset 3 |
-| --------- | ---------------- | ------ | --------- | --------- | --------- |
-|           |                  |        |           |           |           |
+| Criterion                       | Guiding Question                                                                                                          | Source          | Dataset 1 | Dataset 2 | Dataset 3 |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------- | --------- | --------- | --------- |
+| Manual Correction               | Were low-quality batches returned to the annotators or routed to more experienced annotators for correction?             | Klie 2024, §3.4 |           |           |           |
+| Updating Guidelines             | Were guidelines or scheme updated when they proved ambiguous or incomplete, and were affected annotations revised?       | Klie 2024, §3.4 |           |           |           |
+| Data Filtering                  | Were ambiguous or low-quality instances filtered out, and is the filtering justified and documented?                     | Klie 2024, §3.4 |           |           |           |
+| Annotator Feedback              | Did annotators receive feedback on their errors after a batch?                                                            | Klie 2024, §3.4 |           |           |           |
+| Annotator Deboarding            | Were annotators who repeatedly delivered low-quality work removed, their annotations redone, and their work still paid?  | Klie 2024, §3.4 |           |           |           |
+| Automatic Error Detection       | Were automatic checks used to find annotation errors, and were they validated by humans?                                 | Klie 2024, §3.4 |           |           |           |
+| Multiple Labels & Raw Data      | Were multiple labels collected per instance, and are the raw (non-adjudicated) annotations published as well?            | Klie 2024, §3.5 |           |           |           |
+| Adjudication Method             | Is the method stated (manual curation, majority voting, probabilistic aggregation) and how ties are handled?             | Klie 2024, §3.5 |           |           |           |
