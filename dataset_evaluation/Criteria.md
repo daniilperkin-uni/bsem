@@ -39,20 +39,20 @@
 
 | Criterion | Guiding Question | Source | Dataset 1 | Dataset 2 | Dataset 3 |
 | --- | --- | --- | --- | --- | --- |
-| Workforce Selection & Fit | Was the workforce type (crowdworkers, contractors, domain experts, volunteers) appropriately selected to match task difficulty, language, and domain requirements, and was this choice validated (e.g., via a pilot study)? | Klie 2024, §3.2 | | | |
-| Qualification Filtering | Were prerequisite qualification filters (e.g., acceptance rate, completed tasks, language proficiency) established without imposing excessively restrictive or ungrounded thresholds? | Klie 2024, §3.2 | | | |
-| Qualification Testing | Were annotators evaluated via a dedicated (paid) qualification test on representative or unseen instances to verify proficiency before admission to the main task? | Klie 2024, §3.2 | | | |
-| Annotator Training | Was comprehensive task training conducted for all annotator groups—including domain experts and crowdworkers alike—to ensure guideline comprehension and temporal stability? | Klie 2024, §3.2 | | | |
-| Annotator Debriefing & Feedback | Were annotators systematically debriefed during and after the project to gather feedback on guideline clarity, scheme edge cases, and tool usability? | Klie 2024, §3.2 | | | |
-| Monetary Incentives & Bonuses | Were bonus monetary incentives provided (e.g., for task retention or high performance on control instances) using transparent, pre-communicated rules that avoid gaming? | Klie 2024, §3.2 | | | |
-| Fair Pay & Ethical Treatment | Were annotators compensated with fair base pay and treated ethically (e.g., clear terms, respectful communication, and no unjustified wage withholding)? | Klie 2024, §3.2 | | | |
+| Workforce Selection & Fit | Was the workforce type (crowdworkers, contractors, domain experts) chosen to match task difficulty, language, and required expertise, and was this choice validated (e.g., via a pilot study)? | Klie 2024, §3.2 | | | |
+| Qualification Filtering | If qualification filters were used (e.g., acceptance rate, number of completed tasks), were the thresholds grounded (e.g., via a pilot study) rather than set excessively high? | Klie 2024, §3.2 | | | |
+| Qualification Testing | Did annotators have to pass a (paid) qualification test, checked against known answers or by experts, before joining the main annotation? | Klie 2024, §3.2 | | | |
+| Annotator Training | Were all annotators (including domain experts) trained on the task and guidelines before starting to annotate? | Klie 2024, §3.2 | | | |
+| Annotator Debriefing | Were annotators asked for feedback during and after the project (e.g., on guideline clarity, scheme, tool usability)? | Klie 2024, §3.2 | | | |
+| Monetary Incentives & Bonuses | If bonuses were offered (e.g., for performance on control questions or task retention), were the rules transparent, communicated beforehand, and not changed afterwards? | Klie 2024, §3.2 | | | |
+| Fair Pay & Ethical Treatment | Were annotators paid fairly and treated respectfully (e.g., no unjustified withholding of payment)? | Klie 2024, §3.2 & §3.4 | | | |
 
 
 ## Topic 3: Quality Improvement & Adjudication (Klie 2024, §3.4 & §3.5)
 
 | Criterion                       | Guiding Question                                                                                                          | Source          | Dataset 1 | Dataset 2 | Dataset 3 |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------- | --------- | --------- | --------- |
-| Manual Correction               | Were low-quality batches returned to the annotators or routed to more experienced annotators for correction?             | Klie 2024, §3.4 |           |           |           |
+| Manual Correction               | Were low-quality batches corrected (by the original or, for difficult instances, more experienced annotators) instead of being kept as-is? | Klie 2024, §3.4 |           |           |           |
 | Updating Guidelines             | Were guidelines or scheme updated when they proved ambiguous or incomplete, and were affected annotations revised?       | Klie 2024, §3.4 |           |           |           |
 | Data Filtering                  | Were ambiguous or low-quality instances filtered out, and is the filtering justified and documented?                     | Klie 2024, §3.4 |           |           |           |
 | Annotator Feedback              | Did annotators receive feedback on their errors after a batch?                                                            | Klie 2024, §3.4 |           |           |           |
