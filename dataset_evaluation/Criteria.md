@@ -60,3 +60,20 @@
 | Automatic Error Detection       | Were automatic checks used to find annotation errors, and were they validated by humans?                                 | Klie 2024, §3.4 |           |           |           |
 | Multiple Labels & Raw Data      | Were multiple labels collected per instance, and are the raw (non-adjudicated) annotations published as well?            | Klie 2024, §3.5 |           |           |           |
 | Adjudication Method             | Is the method stated (manual curation, majority voting, probabilistic aggregation) and how ties are handled?             | Klie 2024, §3.5 |           |           |           |
+
+
+## Topic 4: Quality Estimation & Inter-Annotator Agreement (Klie 2024, §3.3; Day 3)
+
+An IAA value alone says little: our annotation experiment reached S = 0.83 but κ = 0.72 on the same labels, and in the fake-data simulation guessing annotators reached S = 0.81 at 5 % prevalence (Task 2/3). The criteria below check whether a reported IAA value can actually be interpreted.
+
+| Criterion                         | Guiding Question                                                                                                                                                  | Source                          | Dataset 1 | Dataset 2 | Dataset 3 |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- | --------- | --------- | --------- |
+| IAA Reported                      | Is inter-annotator agreement reported at all, overall and per batch / per label?                                                                                  | Klie 2024, §3.3                 |           |           |           |
+| Metric Named & Chance-corrected   | Is the metric explicitly named, and is it chance-corrected (not only percentage agreement, which overestimates agreement)?                                        | Day 3 slides                    |           |           |           |
+| Metric Suitability                | Does the metric fit the setup (2 annotators → Cohen's κ, more → Fleiss' κ, missing labels → Krippendorff's α), and is the choice justified?                       | Day 3 slides; James 2026        |           |           |           |
+| Label Distribution Reported       | Is the label distribution (prevalence) reported? With skewed labels, S and AC1 are inflated and κ is deflated, so the value cannot be interpreted without it.     | Own experiment (Task 2/3)       |           |           |           |
+| Multiple Metrics                  | Are several metrics reported (e.g., percentage agreement + κ + AC1), or is it argued why one is sufficient?                                                       | Own experiment (Task 3)         |           |           |           |
+| IAA Setup Documented              | Is it stated how many annotators labeled how many instances (N) for the IAA computation, and whether all instances or only a subset were double-annotated?        | Klie 2024, §3.3                 |           |           |           |
+| Before vs. After Adjudication     | Is it clear whether IAA was measured on independent annotations or after discussion/adjudication (which inflates agreement, e.g., our S rose from 0.83 to 0.95)?  | Own experiment (Task 3)         |           |           |           |
+| Uncertainty of the Estimate       | Are sample size and confidence intervals (or another uncertainty estimate) given, especially for small batches?                                                    | Chew et al.                     |           |           |           |
+| Agreement vs. Correctness         | Is quality also checked against gold-standard/control instances or expert judgment, since annotators can agree and still both be wrong?                           | Klie 2024, §3.3; Day 3 slides   |           |           |           |
