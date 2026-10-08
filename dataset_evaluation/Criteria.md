@@ -77,3 +77,16 @@ An IAA value alone says little: our annotation experiment reached S = 0.83 but �
 | Before vs. After Adjudication     | Is it clear whether IAA was measured on independent annotations or after discussion/adjudication (which inflates agreement, e.g., our S rose from 0.83 to 0.95)?  | Own experiment (Task 3)         |           |           |           |
 | Uncertainty of the Estimate       | Are sample size and confidence intervals (or another uncertainty estimate) given, especially for small batches?                                                    | Chew et al.                     |           |           |           |
 | Agreement vs. Correctness         | Is quality also checked against gold-standard/control instances or expert judgment, since annotators can agree and still both be wrong?                           | Klie 2024, §3.3; Day 3 slides   |           |           |           |
+
+
+## Topic 5: Annotator Operations, Welfare & Audit Fairness (Informed by Lúcio 2026)
+
+| Criterion | Guiding Question | Source | Dataset 1 | Dataset 2 | Dataset 3 |
+| --- | --- | --- | --- | --- | --- |
+| Annotator Psychological Safeguards | If instances contained toxic, graphic, violent, or sensitive material, were proactive mental health safeguards implemented (e.g., opt-out rights, visual blur filters, mandatory paid counseling), and did well-being sessions count toward working hours? | Lúcio 2026, Part 1 & 2 | | | |
+| Modality-Adaptive Pacing & Time Sufficiency | Were speed expectations or throughput quotas grounded in empirical task complexity (e.g., duration of audio/video, text length, difficulty) rather than rigid, homogenized pacing targets? | Lúcio 2026, Part 2 & 4 | | | |
+| Overhead & Capacity Accounting | Were essential non-annotation activities (e.g., studying guideline updates, attending calibration sessions, taking physical/restroom breaks) counted as active working time rather than uncompensated downtime? | Lúcio 2026, Part 2 & 4 | | | |
+| Audit Sample Validity & Fairness | Were quality assurance (QA) audits performed on statistically representative sample sizes with documented uncertainty intervals, and did auditors evaluate under operational constraints comparable to the frontline annotators? | Lúcio 2026, Part 2 | | | |
+| Bidirectional Review & Dispute Resolution | Was there a formalized appeal or discussion workflow where annotators could contest auditor overrides, explain cultural or linguistic context, and clarify ambiguous edge cases? | Lúcio 2026, Part 3 | | | |
+| Transparent, Absolute Performance Rubrics | Were annotators evaluated against absolute, criterion-referenced rubrics rather than forced grading curves (stack ranking) or opaque peer comparisons that create blind competition? | Lúcio 2026, Part 4 | | | |
+| Frontline Context & Evasion Harvesting | Was there a mechanism for annotators to systematically flag emerging circumvention tactics, cultural slang, or nuanced edge cases to update data schemas and downstream model training? | Lúcio 2026, Part 5 | | | |
