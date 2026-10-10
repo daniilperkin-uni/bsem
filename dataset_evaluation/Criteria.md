@@ -74,7 +74,7 @@ Ordered by the sub-areas on the board: Source, Collection/Legality/Privacy, Data
 
 ## Quality Assurance
 
-An IAA value alone says little: our annotation experiment reached S = 0.83 but κ = 0.72 on the same labels, and in the fake-data simulation guessing annotators reached S = 0.81 at 5 % prevalence (Task 2/3). The agreement criteria below check whether a reported IAA value can actually be interpreted.
+An IAA value alone says little: our annotation experiment reached S = 0.74 but κ = 0.32 on the same labels, and in the fake-data simulation guessing annotators reached S = 0.81 at 5 % prevalence (Task 2/3). The agreement criteria below check whether a reported IAA value can actually be interpreted.
 
 | Criterion | Guiding Question | Source | Dataset 1 | Dataset 2 | Dataset 3 |
 |---|---|---|---|---|---|
@@ -122,4 +122,4 @@ An IAA value alone says little: our annotation experiment reached S = 0.83 but �
 | N/A | Is adjudication not applicable because there is only one annotation per instance or the task is text production? | Klie 2024, App. 2.5; group discussion | | | |
 | Unclear Adjudication | Is adjudication not mentioned although it must have happened (e.g., several annotations per instance)? | Klie 2024, App. 2.5; group discussion | | | |
 | Multiple Labels & Raw Data | Were multiple labels collected per instance, and are the raw (non-adjudicated) annotations published as well? | Klie 2024, §3.5; group discussion | | | |
-| Before vs. After Adjudication | Is it clear whether IAA was measured on independent annotations or after discussion/adjudication (which inflates agreement, e.g., our S rose from 0.83 to 0.95)? | Own experiment (Task 3); group discussion | | | |
+| Before vs. After Adjudication | Is it clear whether IAA was measured on independent annotations or after discussion/adjudication (which inflates agreement, e.g., our S rose from 0.74 to 0.96)? | Own experiment (Task 3); group discussion | | | |
