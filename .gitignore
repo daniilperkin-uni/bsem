@@ -5,3 +5,5 @@ KliePaper.pdf
 LucioDWI.pdf
 /Slides
 TODO.md
+.idea/
+dataset_evaluation/datasets/scratch_*.txt
