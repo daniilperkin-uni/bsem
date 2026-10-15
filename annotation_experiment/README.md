@@ -1,3 +1,7 @@
+# LINK zu unseren bsem-group/annotation_experiment:
+
+https://example.invalid/university-repo/src/branch/main/annotation_experiment
+
 # Annotation Experiment – Group 1
 
 Offensiveness annotation of 216 tweets (BLM, Covid-19, Elections2020) in 7 batches with Arbiter.
