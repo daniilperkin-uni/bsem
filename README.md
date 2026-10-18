@@ -1,159 +1,73 @@
-# Getting Started 
+# BSEM — Data Annotation & Dataset Evaluation
 
-## Access to GPU Workstations
-Open terminal and ssh into one of the working stations (X--> your group number) using the provided credentials
-```bash
-ssh group_XX@university-hub.example
+University seminar project (B.Sc.) on data-centric AI: how reliable are human annotations,
+and how do you evaluate a computer-vision dataset before you train on it?
+
+> **Content warning:** the datasets contain tweets (topics: BLM, Covid-19, Elections 2020)
+> with offensive language, slurs and profanity.
+
+## What's in here
+
+| Part | What it does |
+|---|---|
+| `annotation_experiment/` | Our annotation experiment: 216 tweets, two annotators, discussion, expert adjudication — plus the agreement-metrics work (Bennett's S, Cohen's kappa, Gwet's AC1) and prevalence-paradox simulations |
+| `dataset_evaluation/` | A 76-criterion audit of **Microsoft COCO** vs **SA-1B (Segment Anything)** across annotation planning, data sourcing, ethics, quality assurance and adjudication |
+
+## Highlights
+
+**Inter-annotator agreement — discussion closes the gap.** Percentage agreement rises
+0.87 → 0.98 and Bennett's S 0.74 → 0.96 between the first pass and the post-discussion labels.
+
+![PA vs Bennett's S](annotation_experiment/figures/fig_agreement_pa_s.png)
+
+**The prevalence paradox.** With rare positives, Cohen's kappa collapses (0.32) while
+Bennett's S stays high (0.74) on the very same labels. The simulation notebooks
+(`task2_fake_data.ipynb`, `task3_metrics_comparison.ipynb`) show why: kappa is 0 for pure
+guessing regardless of prevalence, while S rises with skew — at 5% prevalence, guessing
+alone reaches S = 0.81.
+
+**Agreement with the original labels** (n = 216): PA 91.7%, AC1 0.90 against a trivial
+"never offensive" baseline of 0.89, kappa 0.50 — so agreement on the rare offensive cases
+is only moderate, with a clear topical pattern (BLM missed, Elections 2020 over-labelled).
+
+**Dataset audit:** COCO vs SA-1B on 76 criteria — COCO is the better fit for scene
+understanding (semantic categories per object); SA-1B wins on boundary quality (94% of
+mask pairs > 90% IoU against professionally corrected masks) but has no categories at all.
+
+## Repository layout
+
+```
+annotation_experiment/     our annotation experiment
+  annotated_data/          labels + batch metadata (discussion chat logs removed)
+  original_data/           original labels used for comparison
+  example_data/            small example batches for the exercise notebooks
+  figures/                 figures exported by the analysis notebook
+  presentation/            result slides (.pptx / .pdf)
+  annotated_data_analysis.ipynb   the main analysis
+  task1 - task3A*.ipynb    agreement-metric exercises and simulations
+dataset_evaluation/        COCO vs SA-1B audit
 ```
 
+## Run it
 
-cd into your scratch folder 
-```bash
-cd /scratch/group_XX
+```
+pip install -r requirements.txt
+jupyter lab
 ```
 
+Open `annotation_experiment/annotated_data_analysis.ipynb` and run all cells — it works
+from the repository root or from the folder itself, checks the data with assertions and
+writes the figures to `annotation_experiment/figures/`.
 
-## Get the Starter Repository (Once)
-clone the starter repository into a new group repository (it will ask for your credentials)
+## Data & provenance
 
-```bash
-git clone https://university-git.example/lecture-projects/bsem-ws26_starter.git bsem-ws26_groupX
-cd bsem-ws26_groupX
-```
+The tweets, the example batches and the original benchmark labels were provided as part
+of the course; the discussion chat logs were removed from the published data files (only
+labels, timestamps and batch metadata remain). Paper PDFs are not redistributed — the
+evaluation only cites their arXiv IDs.
 
-rename starter from origin to starter, and instead add the group repository as origin for submission and synchronization between group members 
+## Credits & license
 
-```bash
-git remote rename origin starter
-git remote add origin https://university-git.example/lecture-projects/bsem-ws26_groupX.git
-git push -u origin main
-```
-
-test whether it worked 
-```bash
-git remote -v
-```
-
-This should show 
-```bash
-origin	https://university-git.example/lecture-projects/bsem-ws26_groupX.git (fetch)
-origin	https://university-git.example/lecture-projects/bsem-ws26_groupX.git (push)
-starter	https://university-git.example/lecture-projects/bsem-ws26_starter.git (fetch)
-starter	https://university-git.example/lecture-projects/bsem-ws26_starter.git (push)
-```
-
-Second test
-```bash
-git status
-```
-
-This should show 
-```bash
-On branch main
-Your branch is up to date with 'origin/main'.
-
-nothing to commit, working tree clean
-```
-
-## Prerequisites for Running Code (Once)
-
-### Create a symlink
-Open terminal and ssh into one of the working stations (X--> your group number) using the provided credentials
-
-```bash
-ssh group_XX@university-hub.example
-```
-
-Create a symlink to access the scratch folder 
-```bash
-ln -s /scratch/<username> scratch
-```
-
-### Create a conda env
-
-Test whether /opt/anaconda3/envs/course-env already exists 
-```bash
-conda env list
-```
-
-If it exists: 
-```bash 
-conda activate /opt/anaconda3/envs/course-env
-python -m ipykernel install --user --name=course-env
-```
-
-If not, create it
-
-```bash 
-conda create -p /opt/anaconda3/envs/course-env python=3.14
-conda activate /opt/anaconda3/envs/course-env
-conda install ipykernel
-python -m ipykernel install --user --name=course-env
-conda install matplotlib
-pip install "arbiter_analysis @git+https://example.invalid/course-tools.git"
-```
-
-### Open Jupyter
-In your bowser open 
-https://university-hub.example/hub/login?next=%2Fhub%2F
-
-Login with your credentials.
-Use the File Browser to navigate to your project directory (bsem-ws26_groupX)
-
-make sure the kernel is course-env
-
-# Daily Workflow
-
-## SSH
-```bash
-ssh group_XX@university-hub.example
-```
-
-## Git 
-
-**Start of a work session: get the latest changes**
-```bash
-git pull
-```
-
-**Check what you have changed locally**
-```bash
-git status        # which files are modified / untracked
-git diff          # what exactly changed in tracked files
-```
-
-**Save and share your work**
-```bash
-git add <file1> <file2>     # stage specific files (recommended)
-# or: git add --all         # stage everything, check `git status` first!
-git commit -m "Short, descriptive message"
-git pull                    # get teammates' changes first
-git push
-```
-
-### Useful extras 
-
-```bash
-git log --oneline           # short commit history
-git restore <file>          # discard local changes in a file (irreversible!)
-```
-
-### Tips
-
-- **Commit small and often**, with meaningful messages (e.g. `Add results plot for Task 2`, not `changes`).
-- **Always pull before you push.** If your push is rejected, run `git pull` and then push again.
-- **Merge conflicts:** if `git pull` reports a conflict, open the marked files, resolve the
-  `<<<<<<<` / `=======` / `>>>>>>>` sections, then `git add <file>` and `git commit`.
-- **Don't commit** large generated files, credentials, or personal config. List them in a `.gitignore`.
-
-## Jupyter 
-In your bowser open 
-https://university-hub.example/hub/login?next=%2Fhub%2F
-
-Login with your credentials.
-Use the File Browser to navigate to your project directory (bsem-ws26_groupX)
-
-
-## Conda 
-Any installations you make, affect everyone using the conda environment on that gpu workstation, so please coordinate! 
-
+Course project by a student group (Group 1); teammates are anonymized. Code: MIT (see
+`LICENSE`). Written content and slides: CC BY 4.0. The provided data files are included
+for reproducibility without asserting a license on them.

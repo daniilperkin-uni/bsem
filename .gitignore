@@ -1,9 +1,9 @@
+__pycache__/
+*.py[cod]
 .ipynb_checkpoints/
-Criteria_Topic_1_Annotation_Process.md
-annotation_workflow.svg
-KliePaper.pdf
-LucioDWI.pdf
-/Slides
-TODO.md
+.venv/
+venv/
 .idea/
-dataset_evaluation/datasets/scratch_*.txt
+.vscode/
+.DS_Store
+Thumbs.db
