@@ -13,6 +13,19 @@ and how do you evaluate a computer-vision dataset before you train on it?
 | `annotation_experiment/` | Our annotation experiment: 216 tweets, two annotators, discussion, expert adjudication — plus the agreement-metrics work (Bennett's S, Cohen's kappa, Gwet's AC1) and prevalence-paradox simulations |
 | `dataset_evaluation/` | A 76-criterion audit of **Microsoft COCO** vs **SA-1B (Segment Anything)** across annotation planning, data sourcing, ethics, quality assurance and adjudication |
 
+![Annotation workflow](annotation_experiment/figures/fig_workflow_overview.png)
+
+## Results at a glance
+
+| Metric (n = 216) | Before discussion | Final |
+|---|---|---|
+| Percentage agreement | 0.870 | 0.981 |
+| Bennett's S | 0.741 | 0.963 |
+| Gwet's AC1 | 0.840 | 0.978 |
+| Cohen's kappa | 0.321 | 0.885 |
+
+Against the original labels: PA 91.7% (198/216), AC1 0.90 (trivial baseline 0.89), kappa 0.50.
+
 ## Highlights
 
 **Inter-annotator agreement — discussion closes the gap.** Percentage agreement rises
@@ -25,6 +38,8 @@ Bennett's S stays high (0.74) on the very same labels. The simulation notebooks
 (`task2_fake_data.ipynb`, `task3_metrics_comparison.ipynb`) show why: kappa is 0 for pure
 guessing regardless of prevalence, while S rises with skew — at 5% prevalence, guessing
 alone reaches S = 0.81.
+
+![Prevalence by topic](annotation_experiment/figures/fig_prevalence_by_topic.png)
 
 **Agreement with the original labels** (n = 216): PA 91.7%, AC1 0.90 against a trivial
 "never offensive" baseline of 0.89, kappa 0.50 — so agreement on the rare offensive cases
@@ -44,7 +59,10 @@ annotation_experiment/     our annotation experiment
   figures/                 figures exported by the analysis notebook
   presentation/            result slides (.pptx / .pdf)
   annotated_data_analysis.ipynb   the main analysis
-  task1 - task3A*.ipynb    agreement-metric exercises and simulations
+  task1_analysis.ipynb            agreement metrics on the example batch
+  task2_fake_data.ipynb           synthetic prevalence experiments
+  task3_metrics_comparison.ipynb  metric comparison across prevalences
+  task3A_example_prevalence.ipynb prevalence on the example batch
 dataset_evaluation/        COCO vs SA-1B audit
 ```
 
@@ -63,8 +81,9 @@ writes the figures to `annotation_experiment/figures/`.
 
 The tweets, the example batches and the original benchmark labels were provided as part
 of the course; the discussion chat logs were removed from the published data files (only
-labels, timestamps and batch metadata remain). Paper PDFs are not redistributed — the
-evaluation only cites their arXiv IDs.
+labels, timestamps and batch metadata remain). No usernames, user IDs or media URLs are
+included: `text_id` is a local row identifier and links in the tweet text were replaced
+with `<url>`. Paper PDFs are not redistributed — the evaluation only cites their arXiv IDs.
 
 ## Credits & license
 

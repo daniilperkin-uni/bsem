@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this project, please cite it as below."
+title: "BSEM — Data Annotation & Dataset Evaluation"
+abstract: "Annotation-agreement analysis (Bennett's S, Cohen's kappa, Gwet's AC1) of a 216-tweet annotation experiment with discussion and expert adjudication, plus a 76-criterion audit of Microsoft COCO vs SA-1B."
+authors:
+  - family-names: Perkin
+    given-names: Daniil
+  - name: "BSEM Group"
+version: 1.0.0
+date-released: "2026-10-18"
+license: MIT
