@@ -1,7 +1,15 @@
 # BSEM — Data Annotation & Dataset Evaluation
 
+[![validate](https://github.com/daniilperkin-uni/bsem/actions/workflows/validate.yml/badge.svg)](https://github.com/daniilperkin-uni/bsem/actions/workflows/validate.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](requirements.txt)
+
 University seminar project (B.Sc.) on data-centric AI: how reliable are human annotations,
 and how do you evaluate a computer-vision dataset before you train on it?
+
+**Live write-up:** [uni-old-projects → BSEM](https://daniilperkin-uni.github.io/uni-old-projects/#bsem) · **Slides:** [v1.0.0 release](https://github.com/daniilperkin-uni/bsem/releases/tag/v1.0.0)
+
+**Start here:** [`annotated_data_analysis.ipynb`](annotation_experiment/annotated_data_analysis.ipynb) (GitHub renders the outputs) · [`DatasetEvaluation.md`](dataset_evaluation/DatasetEvaluation.md)
 
 > **Content warning:** the datasets contain tweets (topics: BLM, Covid-19, Elections 2020)
 > with offensive language, slurs and profanity.
@@ -84,6 +92,15 @@ of the course; the discussion chat logs were removed from the published data fil
 labels, timestamps and batch metadata remain). No usernames, user IDs or media URLs are
 included: `text_id` is a local row identifier and links in the tweet text were replaced
 with `<url>`. Paper PDFs are not redistributed — the evaluation only cites their arXiv IDs.
+
+## Limitations
+
+- 216 tweets, two annotators and one expert: enough to demonstrate the mechanism, not to estimate
+  agreement for a population of annotators.
+- Cohen's kappa is unstable when positives are rare (10.6% of labels before discussion);
+  Bennett's S is prevalence-robust by construction. We report both instead of picking one.
+- The codebook changed during the experiment (the batch-6 dip in the per-batch curve); the curve
+  shows the effect but cannot separate the codebook revision from batch difficulty.
 
 ## Credits & license
 
