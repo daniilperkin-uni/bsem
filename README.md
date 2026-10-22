@@ -102,6 +102,20 @@ with `<url>`. Paper PDFs are not redistributed — the evaluation only cites the
 - The codebook changed during the experiment (the batch-6 dip in the per-batch curve); the curve
   shows the effect but cannot separate the codebook revision from batch difficulty.
 
+## Next steps
+
+- **Confidence intervals.** All agreement numbers are point estimates; bootstrap CIs (items resampled,
+  10k draws) would show whether 0.321 → 0.885 is distinguishable from noise at n = 216.
+- **More annotators.** Two annotators and one expert only support pairwise kappa; 4–5 annotators would
+  allow Fleiss' kappa / Krippendorff's alpha and annotator-level error modelling (Dawid–Skene).
+- **Freeze the codebook first.** The revision landed mid-experiment (batch 6); pre-registering the
+  codebook and re-rating the same items after a change would separate the codebook effect from batch
+  difficulty.
+- **One tested metrics module.** The same agreement math is re-implemented in five notebooks; extracting
+  `bsem/metrics.py` with unit tests and importing it everywhere would remove that drift.
+- **Execute the notebooks in CI.** The current job validates data and notebook JSON; running the
+  notebooks headless and diffing outputs would turn "reproducible" from a claim into a gate.
+
 ## Credits & license
 
 Course project by a student group (Group 1); teammates are anonymized. Code: MIT (see
