@@ -142,5 +142,39 @@ class Task3DiscussionTest(unittest.TestCase):
         self.assertTrue(self.offensive(row, "max", "after"))
 
 
+class AgreementGuardTest(unittest.TestCase):
+    """QA-003: a unanimous slice has no defined chance-corrected agreement."""
+
+    @classmethod
+    def setUpClass(cls):
+        # staticmethod: a plain function on the class would bind self as the first argument
+        cls.main = staticmethod(functions("annotated_data_analysis.ipynb", "agreement")["agreement"])
+        cls.task3 = staticmethod(functions("task3_metrics_comparison.ipynb", "agreement")["agreement"])
+
+    def test_unanimous_slice_returns_nan_without_warning(self):
+        with warnings.catch_warnings():
+            warnings.simplefilter("error")
+            result = self.main(np.zeros(20), np.zeros(20))
+        self.assertEqual(result["PA"], 1.0)
+        self.assertEqual(result["S"], 1.0)
+        self.assertTrue(np.isnan(result["kappa"]))
+
+    def test_task3_agreement_guards_kappa_too(self):
+        with warnings.catch_warnings():
+            warnings.simplefilter("error")
+            result = self.task3(np.ones(10, dtype=bool), np.ones(10, dtype=bool))
+        self.assertEqual(result["PA"], 1.0)
+        self.assertTrue(np.isnan(result["Cohen's κ"]))
+
+    def test_regular_slice_is_unchanged(self):
+        a = np.array([0, 1, 1, 0])
+        b = np.array([0, 1, 0, 0])
+        result = self.main(a, b)
+        self.assertAlmostEqual(result["PA"], 0.75)
+        self.assertAlmostEqual(result["S"], 0.5)
+        self.assertAlmostEqual(result["kappa"], 0.5)
+        self.assertAlmostEqual(result["AC1"], 0.5294117647058824)
+
+
 if __name__ == "__main__":
     unittest.main()
