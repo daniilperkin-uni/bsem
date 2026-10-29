@@ -108,5 +108,39 @@ class Task3APrevalenceTest(unittest.TestCase):
         self.assertEqual(result["prevalence_num"], 1.0)
 
 
+class Task3DiscussionTest(unittest.TestCase):
+    """QA-002: an annotator without a discussion entry keeps the first-pass label."""
+
+    @classmethod
+    def setUpClass(cls):
+        # staticmethod: a plain function on the class would bind self as the first argument
+        cls.offensive = staticmethod(functions("task3_metrics_comparison.ipynb", "offensive")["offensive"])
+
+    def row(self, discussion):
+        return pd.Series({
+            "text_id": 1,
+            "labels_annotation": [{"user": "anna", "labels": []},
+                                  {"user": "max", "labels": ["offensive"]}],
+            "labels_discussion": discussion,
+        })
+
+    def test_annotator_missing_from_the_discussion_keeps_their_label(self):
+        row = self.row([{"user": "anna", "labels": ["offensive"]}])
+        self.assertFalse(self.offensive(row, "anna", "before"))
+        self.assertTrue(self.offensive(row, "max", "before"))
+        self.assertTrue(self.offensive(row, "max", "after"))
+
+    def test_recorded_discussion_label_wins(self):
+        row = self.row([{"user": "anna", "labels": ["offensive"]},
+                        {"user": "max", "labels": []}])
+        self.assertTrue(self.offensive(row, "anna", "after"))
+        self.assertFalse(self.offensive(row, "max", "after"))
+
+    def test_undiscussed_row_keeps_the_first_pass(self):
+        row = self.row([])
+        self.assertFalse(self.offensive(row, "anna", "after"))
+        self.assertTrue(self.offensive(row, "max", "after"))
+
+
 if __name__ == "__main__":
     unittest.main()
