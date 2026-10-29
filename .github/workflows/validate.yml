@@ -21,3 +21,5 @@ jobs:
         run: pip install -r requirements.txt
       - name: Validate data, notebooks and figures
         run: python scripts/validate_data.py
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
