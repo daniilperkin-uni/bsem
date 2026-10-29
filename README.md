@@ -7,7 +7,7 @@
 University seminar project (B.Sc.) on data-centric AI: how reliable are human annotations,
 and how do you evaluate a computer-vision dataset before you train on it?
 
-**Live write-up:** [uni-old-projects → BSEM](https://daniilperkin-uni.github.io/uni-old-projects/#bsem) · **Slides:** [v1.0.0 release](https://github.com/daniilperkin-uni/bsem/releases/tag/v1.0.0)
+**Live write-up:** [uni-old-projects → BSEM](https://daniilperkin-uni.github.io/uni-old-projects/#bsem) · **Slides:** [release](https://github.com/daniilperkin-uni/bsem/releases/latest)
 
 **Start here:** [`annotated_data_analysis.ipynb`](annotation_experiment/annotated_data_analysis.ipynb) (GitHub renders the outputs) · [`DatasetEvaluation.md`](dataset_evaluation/DatasetEvaluation.md)
 
