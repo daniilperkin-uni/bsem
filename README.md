@@ -25,7 +25,7 @@ and how do you evaluate a computer-vision dataset before you train on it?
 
 ## Results at a glance
 
-| Metric (n = 216) | Before discussion | Final |
+| Metric (n = 216) | Before discussion | After discussion |
 |---|---|---|
 | Percentage agreement | 0.870 | 0.981 |
 | Bennett's S | 0.741 | 0.963 |
